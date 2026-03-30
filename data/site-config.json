@@ -1,0 +1,32 @@
+{
+  "name": "Ankit Daila",
+  "role": "Web Developer",
+  "githubUsername": "ankitdaila961-oss",
+  "intro": "Web developer focused on stylish interfaces, interactive motion, and practical backend development using Node.js, Express.js, and MySQL.",
+  "feedbackEmail": "",
+  "socials": {
+    "github": "https://github.com/ankitdaila961-oss",
+    "instagram": "https://www.instagram.com/",
+    "twitter": "https://x.com/"
+  },
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Node.js",
+    "Express.js",
+    "MySQL"
+  ],
+  "fallbackProjects": [
+    {
+      "name": "ankit-portfolio",
+      "description": "Animated personal portfolio with 3D effects and an Express.js backend.",
+      "language": "HTML / CSS / JS",
+      "url": "https://github.com/ankitdaila961-oss/ankit-portfolio",
+      "homepage": "",
+      "updatedAt": "2026-03-30T00:00:00.000Z",
+      "stars": 0,
+      "topics": ["portfolio", "express", "frontend"]
+    }
+  ]
+}

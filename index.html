@@ -1,275 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ankit Daila - Web Developer Portfolio with 3D animations, Node.js backend, and GitHub-powered project cards."
+    />
+    <title>Ankit Daila | Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankit Daila | Developer Portfolio</title>
-    <meta name="description" content="Portfolio of Ankit Daila - Web Developer & Designer">
+    <div class="cartoon-sparkles" aria-hidden="true">
+      <span class="spark spark-one"></span>
+      <span class="spark spark-two"></span>
+      <span class="spark spark-three"></span>
+      <span class="spark spark-four"></span>
+    </div>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <header class="topbar">
+      <a class="brand" href="#home">Ankit<span>Daila</span></a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Web Developer Portfolio</p>
+          <h1>
+            Building <span>stylish</span>, animated web experiences.
+          </h1>
+          <p class="hero-text">
+            Hi, I’m <strong>Ankit Daila</strong> — a web developer focused on
+            responsive frontend design, clean backend logic, and immersive web
+            experiences with a bold visual style.
+          </p>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
 
-<body>
+          <div class="social-links labeled-links" id="social-links" aria-label="Social links">
+            <a href="https://github.com/ankitdaila961-oss" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://x.com/" target="_blank" rel="noreferrer" aria-label="Twitter / X">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
 
-    <!-- Background Elements -->
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
+        <div class="hero-visual reveal" data-tilt>
+          <div class="floating-stickers" aria-hidden="true">
+            <span class="sticker">✨ UI</span>
+            <span class="sticker">⚡ JS</span>
+            <span class="sticker">🚀 Node</span>
+          </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#hero" class="logo">Ankit<span>.</span></a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+          <div class="hero-card glass">
+            <div class="card-badge">Available for freelance</div>
+            <h2>Creative Full-Stack Focus</h2>
+            <p>
+              Frontend polish + backend reliability with expressive animation,
+              playful cartoon-style accents, and performance-first development.
+            </p>
+            <div class="mini-stats">
+              <div>
+                <strong>6+</strong>
+                <span>Core Skills</span>
+              </div>
+              <div>
+                <strong>3D</strong>
+                <span>Animated UI</span>
+              </div>
+              <div>
+                <strong>Live</strong>
+                <span>GitHub Projects</span>
+              </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About Me</p>
+          <h2>Developer with a strong eye for code, motion, and detail.</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="glass reveal" data-tilt>
+            <h3>What I do</h3>
+            <p>
+              I build modern websites and web apps using semantic HTML, polished
+              CSS, interactive JavaScript, and scalable backend tools like
+              Node.js, Express.js, and MySQL.
+            </p>
+            <ul class="fun-points">
+              <li>Responsive and fast UI design</li>
+              <li>Backend APIs with Express.js</li>
+              <li>Interactive effects and visual storytelling</li>
             </ul>
+          </article>
+
+          <article class="glass reveal cube-panel">
+            <div class="skill-cube">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Node</span>
+              <span>Express</span>
+              <span>MySQL</span>
+            </div>
+          </article>
         </div>
-    </nav>
+      </section>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="subtitle">Hello, I'm</p>
-                <h1 class="title">Ankit Daila</h1>
-                <h2 class="role">I build <span class="typing-text"></span></h2>
-                <p class="description">
-                    Creating stunning digital experiences with code and creativity.
-                    Specialized in building modern, responsive, and user-friendly websites.
-                </p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">View Work</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
-                </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Placeholder for Hero Image or 3D Element -->
-                <div class="profile-frame">
-                    <img class="imgh" src="ankit.jpg.jpeg" alt="Ankit Daila">
-                </div>
-            </div>
+      <section class="section" id="skills">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Skills</p>
+          <h2>Tech stack I work with.</h2>
         </div>
-        <a href="#about" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text glass-card">
-                    <p>
-                        I am a passionate <strong>Web Developer</strong> based in India.
-                        My journey in web development started with a curiosity for how things work on the internet,
-                        and it has evolved into a career where I craft elegant and functional websites.
-                    </p>
-                    <p>
-                        I love turning ideas into reality using modern web technologies.
-                        When I'm not coding, you can find me exploring new tech trends or gaming.
-                    </p>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="label">Name:</span>
-                            <span class="value">Ankit Daila</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Email:</span>
-                            <span class="value">ankitdaila961@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">From:</span>
-                            <span class="value">India</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-primary">Download CV</a>
-                </div>
-            </div>
+        <div class="skills-grid">
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>HTML</h3>
+            <p>Clean, accessible structure for responsive websites.</p>
+          </article>
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>CSS</h3>
+            <p>Layouts, transitions, animations, and polished UI systems.</p>
+          </article>
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>JavaScript</h3>
+            <p>Interactive interfaces, DOM logic, and smooth user flows.</p>
+          </article>
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>Node.js</h3>
+            <p>Fast backend services and practical server-side development.</p>
+          </article>
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>Express.js</h3>
+            <p>Routing, middleware, and scalable API architecture.</p>
+          </article>
+          <article class="skill-card glass reveal" data-tilt>
+            <h3>MySQL</h3>
+            <p>Structured data design, queries, and relational database work.</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Skills</h2>
-                <p class="section-subtitle">What I bring to the table</p>
-            </div>
-            <div class="skills-grid">
-                <!-- Skill 1 -->
-                <div class="skill-card glass-card">
-                    <img class="imgp" src="html.jpg" alt="card image">
-                    <div class="icon-box">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML5</h3>
-                    <p>Semantic Structure</p>
-                </div>
-                <!-- Skill 2 -->
-                <div class="skill-card glass-card">
-                    <img class="imgp" src="css.jpg" alt="card image">
-                    <div class="icon-box">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <h3>CSS3</h3>
-                    <p>Animations & Layouts</p>
-                </div>
-                <!-- Skill 3 -->
-                <div class="skill-card glass-card">
-                    <img class="imgp" src="js.jpg" alt="card image">
-                    <div class="icon-box">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <h3>JavaScript</h3>
-                    <p>Interactive Logic</p>
-                </div>
-                <!-- Skill 4 -->
-                <div class="skill-card glass-card">
-                    <img class="imgp" src="react.jpg" alt="card image">
-                    <div class="icon-box">
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <h3>React</h3>
-                    <p>Modern UI Library</p>
-                </div>
-            </div>
+      <section class="section" id="projects">
+        <div class="section-heading reveal section-heading-row">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>All GitHub projects with direct links for recruiters and clients.</h2>
+            <p class="project-summary" id="project-summary">
+              Loading all public GitHub projects...
+            </p>
+          </div>
+          <a
+            class="btn btn-secondary github-cta"
+            id="github-profile-link"
+            href="https://github.com/ankitdaila961-oss"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open GitHub Profile
+          </a>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
-                <p class="section-subtitle">Recent works</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card glass-card">
-                    <div class="project-img">
-                        <!-- Placeholder Image -->
-                        <div class="img-placeholder">
-                            <img class="img" src="portfolio.jpg" alt="card image">
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A modern personal portfolio with glassmorphism design.</p>
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 (Placeholder) -->
-                <div class="project-card glass-card">
-                    <div class="project-img">
-                        <div class="img-placeholder">
-                            <img class="img" src="op.png" alt="card image">
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-Commerce UI</h3>
-                        <p>Responsive product page design with cart functionality.</p>
-                        <div class="tags">
-                            <span>React</span>
-                            <span>Tailwind</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 (Placeholder) -->
-                <div class="project-card glass-card">
-                    <div class="project-img">
-                        <div class="img-placeholder">
-                            <img class="img" src="iu.jpg" alt="card image">
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Gaming Dashboard</h3>
-                        <p>Interactive dashboard for gamers with stats and analytics.</p>
-                        <div class="tags">
-                            <span>Vue</span>
-                            <span>CSS Grid</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="projects-grid" id="projects-grid">
+          <p class="loading-text glass">Loading GitHub projects...</p>
         </div>
-    </section>
+      </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contact Me</h2>
-                <p class="section-subtitle">Let's work together</p>
+      <section class="section contact" id="contact">
+        <div class="contact-grid">
+          <div class="contact-box glass reveal" data-tilt>
+            <p class="eyebrow">Let’s Connect</p>
+            <h2>Want a modern website or web app?</h2>
+            <p>
+              Reach out for freelance work, collaborations, or creative web
+              projects. Visitors can email you directly or download your resume
+              instantly from here.
+            </p>
+            <div class="direct-contact-links">
+              <a class="btn btn-primary" href="mailto:ankitdaila961@gmail.com?subject=Portfolio%20Inquiry">Email Me Directly</a>
+              <a class="btn btn-secondary" href="Ankit-Daila-Resume.html" download="Ankit-Daila-Resume.html">Download Resume</a>
             </div>
-            <div class="contact-content glass-card">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+            <div class="contact-actions" id="contact-actions">
+              <a class="btn btn-primary" href="https://github.com/ankitdaila961-oss" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+              <a class="btn btn-secondary" href="https://x.com/" target="_blank" rel="noreferrer">Twitter</a>
             </div>
+          </div>
+
+          <form class="contact-form glass reveal" id="contact-form">
+            <h3>Send feedback</h3>
+            <p>Each new visit can alert you on WhatsApp, and if a visitor shares their phone number below, it will be included in the Gmail and WhatsApp notification.</p>
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="your@email.com" required />
+            </label>
+            <label>
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Share your feedback or tell me about your project..." required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Feedback</button>
+            <p class="form-status" id="form-status"></p>
+          </form>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Ankit Daila. All Rights Reserved.</p>
-        <p>Instagram: ankit_offical_jaat | Contact: 8529151426</p>
-    </footer>
-
-    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

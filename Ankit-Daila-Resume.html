@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ankit Daila | Resume</title>
+    <style>
+      :root {
+        --bg: #08101f;
+        --panel: #0f172a;
+        --text: #e5eefc;
+        --muted: #9fb0d1;
+        --accent: #7c3aed;
+        --accent-two: #22d3ee;
+        --line: rgba(148, 163, 184, 0.24);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #08101f, #111827);
+        color: var(--text);
+        padding: 32px;
+      }
+
+      .resume {
+        max-width: 960px;
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.96);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 32px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .action-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: white;
+        background: linear-gradient(135deg, var(--accent), #4f46e5);
+      }
+
+      .action-btn.secondary {
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+      }
+
+      .role {
+        color: #c4b5fd;
+        font-weight: 700;
+        margin-bottom: 16px;
+        letter-spacing: 0.04em;
+      }
+
+      .muted {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .contact-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .contact-list li {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 20px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .timeline-item + .timeline-item {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(148, 163, 184, 0.16);
+      }
+
+      .timeline-item strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+
+      li + li {
+        margin-top: 6px;
+      }
+
+      a {
+        color: #67e8f9;
+      }
+
+      .full-width {
+        margin-top: 18px;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: rgba(34, 211, 238, 0.12);
+        color: var(--accent-two);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 16px;
+        }
+
+        .resume {
+          padding: 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+          color: black;
+          padding: 0;
+        }
+
+        .resume {
+          border: none;
+          background: white;
+          color: black;
+          box-shadow: none;
+        }
+
+        .topbar {
+          display: none;
+        }
+
+        .card,
+        .contact-list li {
+          border-color: #d1d5db;
+          background: white;
+          color: black;
+        }
+
+        a {
+          color: #2563eb;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="resume">
+      <div class="topbar">
+        <a class="action-btn" href="#" onclick="window.print(); return false;">Print / Save as PDF</a>
+        <a class="action-btn secondary" href="/">Back to Portfolio</a>
+      </div>
+
+      <header>
+        <h1>Ankit Daila</h1>
+        <div class="role">Web Developer | MCA Student | Fresher</div>
+        <p class="muted">
+          Motivated web developer with a strong interest in building responsive, user-friendly,
+          and modern websites. Currently pursuing MCA and looking for an opportunity to start a
+          professional career in web development while contributing practical frontend and backend skills.
+        </p>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:ankitdaila961@gmail.com">ankitdaila961@gmail.com</a></li>
+          <li>Phone: 8529151426</li>
+          <li>Location: Gurgaon</li>
+          <li>GitHub: <a href="https://github.com/ankitdaila961-oss">ankitdaila961-oss</a></li>
+        </ul>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Education</h2>
+          <div class="timeline-item">
+            <strong>MCA (Pursuing)</strong>
+            <span class="muted">St. Andrews Institute of Technology and Management, Gurugram</span>
+          </div>
+          <div class="timeline-item">
+            <strong>B.Sc.</strong>
+            <span class="muted">Pandit Deendayal Upadhyaya Shekhawati University, Sikar</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Senior Secondary</strong>
+            <span class="muted">BSER, 2022</span>
+          </div>
+          <div class="timeline-item">
+            <strong>Secondary</strong>
+            <span class="muted">BSER, 2020</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Technical Skills</h2>
+          <ul>
+            <li>HTML5, CSS3, JavaScript</li>
+            <li>Responsive Web Design and UI styling</li>
+            <li>Node.js and Express.js</li>
+            <li>MySQL and backend fundamentals</li>
+            <li>GitHub and project deployment basics</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </section>
+      </div>
+
+      <section class="card full-width">
+        <h2>Project</h2>
+        <div class="timeline-item">
+          <strong>Personal Portfolio Website</strong>
+          <span class="muted">
+            Built a modern personal portfolio with animated visuals, responsive layout, direct email
+            contact, resume download, contact form handling, and notification-ready backend features.
+          </span>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Profile Highlights</h2>
+          <ul>
+            <li>Fresher actively building practical development projects</li>
+            <li>Interested in frontend development and full-stack web projects</li>
+            <li>Strong focus on clean design and interactive user experience</li>
+            <li>Quick learner with a goal to grow in a professional developer role</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Additional Information</h2>
+          <ul>
+            <li>Current Status: Fresher</li>
+            <li>Preferred Role: Web Developer</li>
+            <li>Based in: Gurgaon</li>
+            <li>Open to internships and entry-level opportunities</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
