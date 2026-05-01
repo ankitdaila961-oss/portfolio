@@ -43,5 +43,32 @@
     "screen": "1280x720",
     "ip": "::1",
     "createdAt": "2026-03-30T19:38:21.263Z"
+  },
+  {
+    "path": "/",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.113.0 Chrome/142.0.7444.265 Electron/39.8.3 Safari/537.36",
+    "language": "en-US",
+    "screen": "1280x720",
+    "ip": "::1",
+    "createdAt": "2026-03-30T19:53:59.170Z"
+  },
+  {
+    "path": "/",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.113.0 Chrome/142.0.7444.265 Electron/39.8.3 Safari/537.36",
+    "language": "en-US",
+    "screen": "1280x720",
+    "ip": "::1",
+    "createdAt": "2026-03-30T19:55:52.120Z"
+  },
+  {
+    "path": "/",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "language": "en-US",
+    "screen": "1280x720",
+    "ip": "::1",
+    "createdAt": "2026-03-30T19:56:12.256Z"
   }
 ]
