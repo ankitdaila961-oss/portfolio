@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "routes": [
+  "builds": [
     {
-      "src": "/contact",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ]
 }
