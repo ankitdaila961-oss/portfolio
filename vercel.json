@@ -1,55 +1,35 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "server.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "index.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "style.css",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "script.js",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "robots.txt",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "sitemap.xml",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "assets/**/*",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.jpg",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.png",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.jpeg",
-            "use": "@vercel/static"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/contact",
-            "dest": "/server.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/contact",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/(.*\\.(jpg|jpeg|png|gif|ico|svg))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
