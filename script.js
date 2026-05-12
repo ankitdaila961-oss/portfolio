@@ -7,7 +7,36 @@ const socialLinks = document.getElementById('social-links');
 const contactActions = document.getElementById('contact-actions');
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
 const visitTrackKey = 'ankit-portfolio-visit-tracked';
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+const backToTop = document.getElementById('back-to-top');
+
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
 
 const defaultPortfolio = {
   socials: [
@@ -403,6 +432,105 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item) => observer.observe(item));
 
+// Active section tracking for navbar
+const sections = document.querySelectorAll('section[id]');
+const navLinksInternal = document.querySelectorAll('.nav a[href^="#"]');
+
+const activeSectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinksInternal.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+      });
+    }
+  });
+}, {
+  threshold: 0.3,
+  rootMargin: '-20% 0px -20% 0px'
+});
+
+sections.forEach((section) => activeSectionObserver.observe(section));
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme') || 'dark';
+
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+// Stats Counter Animation
+function initCounters() {
+  const counterElements = document.querySelectorAll('[data-count]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetAttr = entry.target.getAttribute('data-count');
+        const target = parseInt(targetAttr);
+        let current = 0;
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const increment = target / steps;
+        const stepTime = duration / steps;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            entry.target.textContent = target + '+';
+            clearInterval(timer);
+          } else {
+            entry.target.textContent = Math.floor(current) + '+';
+          }
+        }, stepTime);
+        
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counterElements.forEach(el => observer.observe(el));
+}
+
+// Image Lightbox Logic
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const closeBtn = document.querySelector('.modal-close');
+const certBtns = document.querySelectorAll('.view-cert-btn');
+
+if (modal && modalImg && certBtns.length > 0) {
+  certBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const imgSrc = btn.getAttribute('data-cert');
+      modal.style.display = 'flex';
+      modalImg.src = imgSrc;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+}
+
+if (closeBtn && modal) {
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 function bindTiltEffect() {
   const tiltItems = document.querySelectorAll('[data-tilt]');
 
@@ -434,6 +562,7 @@ if (contactForm) {
 }
 
 bindTiltEffect();
+initCounters();
 initThreeScene();
 loadPortfolio();
 notifyPortfolioVisit();

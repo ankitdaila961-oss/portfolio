@@ -3,11 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Ankit Daila - Web Developer Portfolio with 3D animations, Node.js backend, and GitHub-powered project cards."
-    />
-    <title>Ankit Daila | Web Developer</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Ankit Daila | Full-Stack Web Developer & UI Designer</title>
+    <meta name="title" content="Ankit Daila | Full-Stack Web Developer & UI Designer" />
+    <meta name="description" content="Professional portfolio of Ankit Daila. Specializing in high-performance web applications, 3D animated UIs, and full-stack development with Node.js and React." />
+    <meta name="keywords" content="Ankit Daila, Web Developer, Full Stack Developer, Frontend Developer, UI/UX Designer, Portfolio, Node.js, React, Three.js, JavaScript, Uttarakhand Developer" />
+    <meta name="author" content="Ankit Daila" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/ankitdaila961-oss" />
+    <meta property="og:title" content="Ankit Daila | Full-Stack Web Developer Portfolio" />
+    <meta property="og:description" content="Explore my latest web development projects, creative UI designs, and full-stack solutions." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/ankitdaila961-oss/ankit-portfolio/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://github.com/ankitdaila961-oss" />
+    <meta property="twitter:title" content="Ankit Daila | Full-Stack Web Developer Portfolio" />
+    <meta property="twitter:description" content="Explore my latest web development projects, creative UI designs, and full-stack solutions." />
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/ankitdaila961-oss/ankit-portfolio/main/preview.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,6 +42,20 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#7c3aed',
+              secondary: '#22d3ee',
+              accent: '#f97316',
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -35,11 +70,26 @@
 
     <header class="topbar">
       <a class="brand" href="#home">Ankit<span>Daila</span></a>
-      <nav class="nav">
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon dark-icon"></i>
+          <i class="fa-solid fa-sun light-icon"></i>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="nav-menu">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/ankit-daila-6a764928b/" target="_blank" rel="noreferrer" class="nav-linkedin">LinkedIn</a>
       </nav>
     </header>
 
@@ -62,6 +112,10 @@
           </div>
 
           <div class="social-links labeled-links" id="social-links" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/ankit-daila-6a764928b/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="link-linkedin">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
             <a href="https://github.com/ankitdaila961-oss" target="_blank" rel="noreferrer" aria-label="GitHub">
               <i class="fa-brands fa-github"></i>
               <span>GitHub</span>
@@ -109,38 +163,162 @@
         </div>
       </section>
 
-      <section class="section about" id="about">
+      <!-- ABOUT & ACHIEVEMENTS SECTION -->
+      <section class="section" id="about">
         <div class="section-heading reveal">
-          <p class="eyebrow">About Me</p>
-          <h2>Developer with a strong eye for code, motion, and detail.</h2>
+          <p class="eyebrow">Professional Journey</p>
+          <h2 class="text-4xl font-extrabold mb-4">About & Achievements</h2>
+          <p class="text-muted max-w-2xl">A dedicated developer with a passion for emerging technologies, from AI and Big Data to Cloud Computing and IoT.</p>
         </div>
 
-        <div class="about-grid">
-          <article class="glass reveal" data-tilt>
-            <h3>What I do</h3>
-            <p>
-              I build modern websites and web apps using semantic HTML, polished
-              CSS, interactive JavaScript, and scalable backend tools like
-              Node.js, Express.js, and MySQL.
-            </p>
-            <ul class="fun-points">
-              <li>Responsive and fast UI design</li>
-              <li>Backend APIs with Express.js</li>
-              <li>Interactive effects and visual storytelling</li>
-            </ul>
+        <!-- STATS COUNTER SECTION -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 reveal">
+          <div class="stat-card glass p-6 rounded-3xl text-center group hover:border-secondary transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2" data-count="4">0</div>
+            <p class="text-sm uppercase tracking-widest text-muted group-hover:text-text transition-colors">Certifications</p>
+          </div>
+          <div class="stat-card glass p-6 rounded-3xl text-center group hover:border-secondary transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2" data-count="10">0</div>
+            <p class="text-sm uppercase tracking-widest text-muted group-hover:text-text transition-colors">Projects</p>
+          </div>
+          <div class="stat-card glass p-6 rounded-3xl text-center group hover:border-secondary transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2" data-count="2">0</div>
+            <p class="text-sm uppercase tracking-widest text-muted group-hover:text-text transition-colors">Trainings</p>
+          </div>
+          <div class="stat-card glass p-6 rounded-3xl text-center group hover:border-secondary transition-all duration-300">
+            <div class="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2" data-count="100">0</div>
+            <p class="text-sm uppercase tracking-widest text-muted group-hover:text-text transition-colors">Coding Hours</p>
+          </div>
+        </div>
+
+        <!-- ACHIEVEMENTS CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <!-- Card 1: Samsung -->
+          <article class="achievement-card glass reveal p-6 rounded-[2rem] relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="aspect-video bg-white/5 rounded-2xl mb-4 overflow-hidden relative view-cert-btn cursor-zoom-in" data-cert="img/samsung-cert.jpeg">
+                 <img src="img/samsung-cert.jpeg" alt="Samsung Innovation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60">
+                 <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-[10px] font-bold text-white bg-black/50 px-2 py-1 rounded">Samsung Certificate</span>
+                 </div>
+              </div>
+              <span class="text-[10px] uppercase tracking-tighter px-2 py-1 bg-primary/20 text-primary rounded-full mb-3 inline-block">Samsung</span>
+              <h3 class="text-lg font-bold mb-2">Samsung Innovation Campus</h3>
+              <p class="text-xs text-muted leading-relaxed mb-4">Focused training in AI, Big Data, IoT, and advanced programming logic.</p>
+              <button class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-primary hover:text-white transition-all view-cert-btn" data-cert="img/samsung-cert.jpeg">View Certificate</button>
+            </div>
+          </article>
+          
+          <!-- Card 2: Innoviz -->
+          <article class="achievement-card glass reveal p-6 rounded-[2rem] relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="aspect-video bg-white/5 rounded-2xl mb-4 overflow-hidden relative view-cert-btn cursor-zoom-in" data-cert="img/innoviz-cert.jpeg">
+                <img src="img/innoviz-cert.jpeg" alt="Innoviz 2026" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60">
+                <div class="absolute inset-0 flex items-center justify-center">
+                   <span class="text-[10px] font-bold text-white bg-black/50 px-2 py-1 rounded">Innoviz 2026</span>
+                </div>
+              </div>
+              <span class="text-[10px] uppercase tracking-tighter px-2 py-1 bg-secondary/20 text-secondary rounded-full mb-3 inline-block">Innoviz 2026</span>
+              <h3 class="text-lg font-bold mb-2">Participation Award</h3>
+              <p class="text-xs text-muted leading-relaxed mb-4">Recognized participation from St. Andrews Group of Institutions.</p>
+              <button class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-secondary hover:text-white transition-all view-cert-btn" data-cert="img/innoviz-cert.jpeg">View Certificate</button>
+            </div>
           </article>
 
-          <article class="glass reveal cube-panel">
-            <div class="skill-cube">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Node</span>
-              <span>Express</span>
-              <span>MySQL</span>
+          <!-- Card 3: Cloud Computing -->
+          <article class="achievement-card glass reveal p-6 rounded-[2rem] relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="aspect-video bg-white/5 rounded-2xl mb-4 overflow-hidden relative view-cert-btn cursor-zoom-in" data-cert="img/victory-cert.jpeg">
+                <img src="img/victory-cert.jpeg" alt="Cloud Computing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60">
+                <div class="absolute inset-0 flex items-center justify-center">
+                   <span class="text-[10px] font-bold text-white bg-black/50 px-2 py-1 rounded">Cloud Training</span>
+                </div>
+              </div>
+              <span class="text-[10px] uppercase tracking-tighter px-2 py-1 bg-accent/20 text-accent rounded-full mb-3 inline-block">Victory Tech</span>
+              <h3 class="text-lg font-bold mb-2">Cloud Computing</h3>
+              <p class="text-xs text-muted leading-relaxed mb-4">Hands-on training in Cloud concepts during MCA 2nd Semester.</p>
+              <button class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-accent hover:text-white transition-all view-cert-btn" data-cert="img/victory-cert.jpeg">View Certificate</button>
+            </div>
+          </article>
+
+          <!-- Card 4: Data Analytics -->
+          <article class="achievement-card glass reveal p-6 rounded-[2rem] relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-success/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="aspect-video bg-white/5 rounded-2xl mb-4 overflow-hidden relative view-cert-btn cursor-zoom-in" data-cert="img/kreativan-cert.jpeg">
+                <img src="img/kreativan-cert.jpeg" alt="Data Analytics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60">
+                <div class="absolute inset-0 flex items-center justify-center">
+                   <span class="text-[10px] font-bold text-white bg-black/50 px-2 py-1 rounded">Data Analytics</span>
+                </div>
+              </div>
+              <span class="text-[10px] uppercase tracking-tighter px-2 py-1 bg-success/20 text-success rounded-full mb-3 inline-block">Kreativan Tech</span>
+              <h3 class="text-lg font-bold mb-2">Data Analytics</h3>
+              <p class="text-xs text-muted leading-relaxed mb-4">Completed intensive 30-hour professional training program.</p>
+              <button class="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-success hover:text-white transition-all view-cert-btn" data-cert="img/kreativan-cert.jpeg">View Certificate</button>
             </div>
           </article>
         </div>
+
+        <!-- EXPERIENCE TIMELINE -->
+        <div class="timeline-container reveal mb-20 relative px-4">
+          <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary via-secondary to-transparent -translate-x-1/2 opacity-50"></div>
+          
+          <div class="space-y-16">
+            <!-- Timeline Item 1 -->
+            <div class="relative flex flex-col md:flex-row items-center group">
+              <div class="md:w-1/2 flex justify-end md:pr-16 hidden md:flex">
+                <div class="glass p-8 rounded-[2rem] text-right max-w-sm transform group-hover:-translate-y-2 transition-all duration-500 border-r-4 border-primary">
+                  <h4 class="text-xl font-bold text-primary mb-1">Samsung Innovation Campus</h4>
+                  <p class="text-sm font-medium text-white/80">Role: Participant</p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-primary border-4 border-bg rounded-full -translate-x-1/2 z-10 shadow-[0_0_20px_rgba(124,58,237,0.8)] group-hover:scale-125 transition-transform"></div>
+              <div class="md:w-1/2 pl-16 w-full">
+                <div class="glass p-8 rounded-[2rem] transform group-hover:-translate-y-2 transition-all duration-500 border-l-4 border-primary md:border-l-0">
+                  <h4 class="text-xl font-bold text-primary md:hidden mb-2">Samsung Innovation Campus</h4>
+                  <p class="text-xs font-bold text-primary/80 uppercase mb-3 tracking-widest">Skills Mastered</p>
+                  <ul class="grid grid-cols-2 gap-2 text-xs text-muted">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Artificial Intelligence</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Big Data & Analytics</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Coding & Programming</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> IoT & Connectivity</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative flex flex-col md:flex-row items-center group">
+              <div class="md:w-1/2 md:pr-16 order-2 md:order-1 w-full">
+                <div class="glass p-8 rounded-[2rem] text-left md:text-right transform group-hover:-translate-y-2 transition-all duration-500 border-l-4 border-secondary md:border-l-0 md:border-r-4">
+                   <h4 class="text-xl font-bold text-secondary mb-1">Cloud Computing Training</h4>
+                   <p class="text-sm font-medium text-white/80 mb-3">Victory Tech Solutions</p>
+                   <p class="text-xs text-muted leading-relaxed">Completed comprehensive practical training in Cloud architecture and concepts during MCA 2nd Semester.</p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-secondary border-4 border-bg rounded-full -translate-x-1/2 z-10 shadow-[0_0_20px_rgba(34,211,238,0.8)] group-hover:scale-125 transition-transform"></div>
+              <div class="md:w-1/2 pl-16 order-1 md:order-2"></div>
+            </div>
+
+             <!-- Timeline Item 3 -->
+             <div class="relative flex flex-col md:flex-row items-center group">
+              <div class="md:w-1/2 flex justify-end pr-16 hidden md:flex"></div>
+              <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-accent border-4 border-bg rounded-full -translate-x-1/2 z-10 shadow-[0_0_20px_rgba(249,115,22,0.8)] group-hover:scale-125 transition-transform"></div>
+              <div class="md:w-1/2 pl-16 w-full">
+                <div class="glass p-8 rounded-[2rem] transform group-hover:-translate-y-2 transition-all duration-500 border-l-4 border-accent">
+                  <h4 class="text-xl font-bold text-accent mb-1">Data Analytics Training</h4>
+                  <p class="text-sm font-medium text-white/80 mb-3">Kreativan Technologies</p>
+                  <p class="text-xs text-muted leading-relaxed">Completed a professional 30-hour training program focusing on data-driven insights and analytical workflows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </section>
 
       <section class="section" id="skills">
@@ -198,7 +376,49 @@
         </div>
 
         <div class="projects-grid" id="projects-grid">
-          <p class="loading-text glass">Loading GitHub projects...</p>
+          <!-- Skeleton loaders shown while projects are fetching -->
+          <div class="skeleton-card glass">
+            <div class="skeleton-tag shimmer"></div>
+            <div class="skeleton-title shimmer"></div>
+            <div class="skeleton-text shimmer"></div>
+            <div class="skeleton-text shimmer" style="width: 80%"></div>
+            <div class="skeleton-meta">
+              <div class="skeleton-pill shimmer"></div>
+              <div class="skeleton-pill shimmer"></div>
+            </div>
+            <div class="skeleton-actions">
+              <div class="skeleton-btn shimmer"></div>
+              <div class="skeleton-btn shimmer"></div>
+            </div>
+          </div>
+          <div class="skeleton-card glass">
+            <div class="skeleton-tag shimmer"></div>
+            <div class="skeleton-title shimmer"></div>
+            <div class="skeleton-text shimmer"></div>
+            <div class="skeleton-text shimmer" style="width: 80%"></div>
+            <div class="skeleton-meta">
+              <div class="skeleton-pill shimmer"></div>
+              <div class="skeleton-pill shimmer"></div>
+            </div>
+            <div class="skeleton-actions">
+              <div class="skeleton-btn shimmer"></div>
+              <div class="skeleton-btn shimmer"></div>
+            </div>
+          </div>
+          <div class="skeleton-card glass">
+            <div class="skeleton-tag shimmer"></div>
+            <div class="skeleton-title shimmer"></div>
+            <div class="skeleton-text shimmer"></div>
+            <div class="skeleton-text shimmer" style="width: 80%"></div>
+            <div class="skeleton-meta">
+              <div class="skeleton-pill shimmer"></div>
+              <div class="skeleton-pill shimmer"></div>
+            </div>
+            <div class="skeleton-actions">
+              <div class="skeleton-btn shimmer"></div>
+              <div class="skeleton-btn shimmer"></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -214,12 +434,16 @@
             </p>
             <div class="direct-contact-links">
               <a class="btn btn-primary" href="mailto:ankitdaila961@gmail.com?subject=Portfolio%20Inquiry">Email Me Directly</a>
-              <a class="btn btn-secondary" href="Ankit-Daila-Resume.html" download="Ankit-Daila-Resume.html">Download Resume</a>
+              <a class="btn btn-secondary btn-resume" href="Ankit-Daila-Resume.pdf" download="Ankit-Daila-Resume.pdf">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>Download Resume</span>
+              </a>
             </div>
             <div class="contact-actions" id="contact-actions">
               <a class="btn btn-primary" href="https://github.com/ankitdaila961-oss" target="_blank" rel="noreferrer">GitHub</a>
               <a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
               <a class="btn btn-secondary" href="https://x.com/" target="_blank" rel="noreferrer">Twitter</a>
+              <a class="btn btn-secondary btn-linkedin" href="https://www.linkedin.com/in/ankit-daila-6a764928b/" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
           </div>
 
@@ -248,6 +472,52 @@
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a class="brand" href="#home">Ankit<span>Daila</span></a>
+          <p>Building stylish, animated web experiences with a focus on modern design and clean code.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/ankitdaila961-oss" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ankit-daila-6a764928b/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p><i class="fa-solid fa-envelope"></i> ankitdaila961@gmail.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Uttarakhand, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ankit Daila. All rights reserved.</p>
+        <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="image-modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modal-img">
+      <div id="modal-caption"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
