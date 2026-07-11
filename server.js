@@ -54,9 +54,17 @@ async function readJson(filePath, fallbackValue) {
   }
 }
 
+// On Vercel the filesystem is read-only (except /tmp), so writes will fail.
+// We now swallow write errors instead of letting them bubble up and break
+// the /api/contact and /api/visit routes. Locally (where the filesystem is
+// writable) this still saves to the data/ folder as before.
 async function writeJson(filePath, value) {
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(value, null, 2), 'utf8');
+  try {
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(value, null, 2), 'utf8');
+  } catch (error) {
+    console.error(`Skipping local save for ${filePath} (read-only filesystem):`, error.message);
+  }
 }
 
 function getJson(url) {
@@ -346,8 +354,10 @@ app.get('/api/portfolio', async (_request, response) => {
 app.post('/api/visit', async (request, response) => {
   try {
     const visitEntry = buildVisitEntry(request);
-    const visits = await readJson(visitsPath, []);
 
+    // writeJson now silently skips saving if the filesystem is read-only
+    // (e.g. on Vercel), so this will no longer throw and break the route.
+    const visits = await readJson(visitsPath, []);
     visits.push(visitEntry);
     await writeJson(visitsPath, visits.slice(-200));
 
@@ -408,6 +418,8 @@ app.post('/api/contact', async (request, response) => {
       createdAt: new Date().toISOString()
     };
 
+    // writeJson now silently skips saving if the filesystem is read-only
+    // (e.g. on Vercel), so this will no longer throw and break the route.
     const entries = await readJson(messagesPath, []);
     entries.push(entry);
     await writeJson(messagesPath, entries);
