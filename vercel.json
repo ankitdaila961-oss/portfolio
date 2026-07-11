@@ -3,7 +3,18 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "index.html",
+          "Ankit-Daila-Resume.html",
+          "style.css",
+          "script.js",
+          "robots.txt",
+          "sitemap.xml",
+          "img/**"
+        ]
+      }
     }
   ],
   "routes": [
